@@ -39,21 +39,23 @@ class UserController extends Controller
 
     public function seed()
     {
-        $owner = Role::create([
-            'name' => 'owner',
-            'display_name' => 'Project Owner',
-            'description' => 'User is the owner of a given project (l\'utilisateur qui possède tout le projet)'
-        ]);
-        $admin = Role::create([
-            'name' => 'admin',
-            'display_name' => 'User Administrator',
-            'description' => 'User is allowed to manage and edit other users'
-        ]);
-        $driver = Role::create([
-            'name' => 'driver',
-            'display_name' => 'A driver of the Society',
-            'description' => 'This user only consult details and edit some tuffs'
-        ]);
+        $owner = new Role();
+        $owner->name = "owner";
+        $owner->display_name= "Project Owner";
+        $owner->description= 'User is the owner of a given project (l\'utilisateur qui possède tout le projet)';
+        $owner->save();
+
+        $admin = new Role();
+        $admin->name = "admin";
+        $admin->display_name= "User Administrator";
+        $admin->description= 'User is allowed to manage and edit other users';
+        $admin->save();
+
+        $driver = new Role();
+        $driver->name = "driver";
+        $driver->display_name= "A driver of the Society";
+        $driver->description= 'This user only consult details and edit some tuffs';
+        $driver->save();
 
         $user = User::where('username', '=', 'root')->first();
 // role attach alias
