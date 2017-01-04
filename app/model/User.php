@@ -8,13 +8,11 @@ use Illuminate\Auth\Authenticatable;
 use Laravel\Lumen\Auth\Authorizable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
-use Zizaco\Entrust\Traits\EntrustUserTrait;
 
 
-class User extends Eloquent implements JWTSubject, AuthenticatableContract //, AuthorizableContract To avoid conflict with Entrust
+class User extends Eloquent implements JWTSubject, AuthenticatableContract, AuthorizableContract
 {
-    use Authenticatable, //Authorizable, TO avoid conflict with entrust
-        EntrustUserTrait;
+    use Authenticatable, Authorizable;
     /*use EntrustUserTrait {
         EntrustUserTrait::restore insteadof SoftDeletes;
     }//*/// Only if your are using sofDelete, uncomment this portion of code.

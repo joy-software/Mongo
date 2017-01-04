@@ -62,7 +62,6 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model'  => \App\model\User::class,
-            'table' => 'Users',
         ],
     ],
 
