@@ -66,7 +66,7 @@ $app->delete('/api/livraisons/{id}','LivraisonController@delete');
  */
 $app->post('/api/auth/login', 'AuthController@postLogin');
 
-$app->group(['prefix' => 'api', ['middleware' => 'api.auth']], function($app) {
+$app->group(['prefix' => 'api', ['middleware' => 'auth:api']], function($app) {
     $app->get('/','UserController@test');
 
     /**
