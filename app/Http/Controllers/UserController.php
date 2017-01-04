@@ -37,35 +37,6 @@ class UserController extends Controller
         return response()->json($users);
     }
 
-    public function seed()
-    {
-        $owner = new Role();
-        $owner->name = "owner";
-        $owner->display_name= "Project Owner";
-        $owner->description= 'User is the owner of a given project (l\'utilisateur qui possède tout le projet)';
-        $owner->save();
-
-        $admin = new Role();
-        $admin->name = "admin";
-        $admin->display_name= "User Administrator";
-        $admin->description= 'User is allowed to manage and edit other users';
-        $admin->save();
-
-        $driver = new Role();
-        $driver->name = "driver";
-        $driver->display_name= "A driver of the Society";
-        $driver->description= 'This user only consult details and edit some tuffs';
-        $driver->save();
-
-        $user = User::where('username', '=', 'root')->first();
-// role attach alias
-        $user->attachRole($admin); // parameter can be an Role object, array, or id
-        $user = User::where('username', '=', 'owner')->first();
-        $user->attachRole($owner);
-        $user = User::where('username', '=', 'driver')->first();
-        $user->attachRole($driver);
-        return response()->json("Seed effectué");
-    }
 
     /**
      * Pour recupérer tous les utilsateurs de la BD

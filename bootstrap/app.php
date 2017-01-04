@@ -66,9 +66,6 @@ $app->singleton(
 
  $app->routeMiddleware([
      'auth' => App\Http\Middleware\Authenticate::class,
-     'role' => \Zizaco\Entrust\Middleware\EntrustRole::class,
-     'permission' => \Zizaco\Entrust\Middleware\EntrustPermission::class,
-     'ability' => \Zizaco\Entrust\Middleware\EntrustAbility::class,
  ]);
 
 /*
@@ -83,7 +80,7 @@ $app->singleton(
 */
 
 $app->register(App\Providers\AppServiceProvider::class);
-$app->register(App\Providers\EntrustServiceProvider::class);
+
 //$app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
 

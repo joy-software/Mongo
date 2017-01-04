@@ -28,7 +28,6 @@ $app->get('/api/users/{id}','UserController@get');
 $app->post('/api/users','UserController@create');
 $app->put('/api/users/{id}','UserController@update');
 $app->delete('/api/users/{id}','UserController@delete');
-$app->get('/api/seed','UserController@seed');
 
 /**
  * Les points de localisation
@@ -67,16 +66,16 @@ $app->delete('/api/livraisons/{id}','LivraisonController@delete');
  */
 $app->post('/api/auth/login', 'AuthController@postLogin');
 
-$app->group(['prefix' => 'api', ['middleware' => ['auth:api','role:admin|owner']]], function($app) {
+$app->group(['prefix' => 'api', ['middleware' => 'auth:api']], function($app) {
     $app->get('/','UserController@test');
 
     /**
      * Les users
      */
     $app->get('/v1/users/{id}','UserController@get');
-    $app->post('/v1/users',['middleware' => ['permission:create-user'], 'uses' => 'UserController@create']);
-    $app->put('/v1/users/{id}',['middleware' => ['permission:edit-user'], 'uses' => 'UserController@update']);
-    $app->delete('/v1/users/{id}',['middleware' => ['permission:delete-user'], 'uses' => 'UserController@delete']);
+    $app->post('/v1/users','UserController@create');
+    $app->put('/v1/users/{id}','UserController@update');
+    $app->delete('/v1/users/{id}','UserController@delete');
     /**
      * Les points de localisation
      */
