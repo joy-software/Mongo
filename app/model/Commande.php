@@ -15,7 +15,8 @@ class Commande extends Model
 {
     protected $collection = 'commande';
     protected $primaryKey = '_id';
-  //  protected $dates = ['end'];
+  //  protected $dates = ['end'];dsfsdfsdfsdf
+    //procesdfs
 
     public function pointlivraison()
     {
