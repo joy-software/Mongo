@@ -40,7 +40,7 @@ class CommandeController extends Controller
         $commande->description = $request->input('description');
         $commande->priority = $request->input('priority');
         $commande->status = $request->input('status');
-        if(!empty($request->input('end')))$commande->end = $request->input('end');
+        if(!empty($request->input('end'))) $commande->end = Carbon::createFromFormat('Y-m-d H:i:s',$request->input('end'));
         $commande->save();//*/
 
 
@@ -77,9 +77,9 @@ class CommandeController extends Controller
         if(!empty($request->input('pointLivraison_id'))) $commande->name = $request->input('pointLivraison_id');
         if(!empty($request->input('livraison_id'))) $commande->name = $request->input('livraison_id');
         if(!empty($request->input('description'))) $commande->description = $request->input('description');
-        if(!empty($request->input('priority'))) $commande->localisation = $request->input('priority');
-        if(!empty($request->input('status'))) $commande->longitude = $request->input('status');
-        if(!empty($request->input('end'))) $commande->lattitude = $request->input('end');
+        if(!empty($request->input('priority'))) $commande->priority = $request->input('priority');
+        if(!empty($request->input('status'))) $commande->status = $request->input('status');
+        if(!empty($request->input('end'))) Carbon::createFromFormat('Y-m-d H:i:s', $commande->end = $request->input('end'));
 
         $commande->save();
 
