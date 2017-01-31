@@ -40,7 +40,7 @@ class CommandeController extends Controller
         $commande->description = $request->input('description');
         $commande->priority = $request->input('priority');
         $commande->status = $request->input('status');
-        $commande->end = $request->input('end');
+        if(!empty($request->input('end')))$commande->end = $request->input('end');
         $commande->save();//*/
 
 
