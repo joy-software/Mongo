@@ -26,7 +26,7 @@ class CommandeTableSeeder extends Seeder
             'pointLivraison_id' => '585a5d0601e31c1504000995',
             'priority' => 'moyenne',
             'description' => 'livrer 50 bouteilles',
-            'status' => 'non effectue',
+            'status' => 'non effectues',
             'livraison_id' => "5859d83e01e31c10ec003e79"
         ]);
         Commande::create([

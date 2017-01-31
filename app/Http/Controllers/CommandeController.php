@@ -36,6 +36,7 @@ class CommandeController extends Controller
         $commande = new Commande();
 
         $commande->pointLivraison_id = $request->input('pointLivraison_id');
+        $commande->livraison_id = $request->input('livraison_id');
         $commande->description = $request->input('description');
         $commande->priority = $request->input('priority');
         $commande->status = $request->input('status');
@@ -74,6 +75,7 @@ class CommandeController extends Controller
         $commande = Commande::find($id);
 
         if(!empty($request->input('pointLivraison_id'))) $commande->name = $request->input('pointLivraison_id');
+        if(!empty($request->input('livraison_id'))) $commande->name = $request->input('livraison_id');
         if(!empty($request->input('description'))) $commande->description = $request->input('description');
         if(!empty($request->input('priority'))) $commande->localisation = $request->input('priority');
         if(!empty($request->input('status'))) $commande->longitude = $request->input('status');
