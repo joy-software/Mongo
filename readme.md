@@ -1,3 +1,70 @@
+# Delivery management
+The back-end api of a delivery management app.
+Back-end running at : (http://projetsynthese.herokuapp.com)
+
+# API ROUTES 
+Lumen version ```/```
+
+
+##users
+get,get,post,put,delete
+``` 
+'/api/users'
+'/api/users/{id}'
+'/api/users',
+'/api/users/{id}'
+'/api/users/{id}'
+```
+
+
+##point of localisation
+get,get,post,put,delete
+``` 
+'/api/pointlivraisons'
+'/api/pointlivraisons/{id}'
+'/api/pointlivraisons'
+'/api/pointlivraisons/{id}'
+'/api/pointlivraisons/{id}'
+```
+
+##order
+get,get,post,put,delete
+```
+'/api/commandes'
+'/api/commandes/{id}'
+'/api/commandes'
+'/api/commandes/{id}'
+'/api/commandes/{id}'
+```
+
+
+##truck
+get,get,post,put,delete
+ ```
+'/api/camions'
+'/api/camions/{id}'
+'/api/camions'
+'/api/camions/{id}'
+'/api/camions/{id}'
+ ```
+
+ ##delivery
+ get,get,post,put,delete
+ ``` 
+'/api/livraisons'
+'/api/livraisons/{id}'
+'/api/livraisons'
+'/api/livraisons/{id}'
+'/api/livraisons/{id}'
+ ```
+
+ ##authentification
+ ```
+'/api/auth/login'
+```
+
+
+
 # Lumen PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
