@@ -6,7 +6,7 @@ Back-end running at : (http://projetsynthese.herokuapp.com)
 Lumen version ```/```
 
 
-##users
+## users
 get,get,post,put,delete
 ``` 
 '/api/users'
@@ -17,7 +17,7 @@ get,get,post,put,delete
 ```
 
 
-##point of localisation
+## point of localisation
 get,get,post,put,delete
 ``` 
 '/api/pointlivraisons'
@@ -27,7 +27,7 @@ get,get,post,put,delete
 '/api/pointlivraisons/{id}'
 ```
 
-##order
+## order
 get,get,post,put,delete
 ```
 '/api/commandes'
@@ -38,7 +38,7 @@ get,get,post,put,delete
 ```
 
 
-##truck
+## truck
 get,get,post,put,delete
  ```
 '/api/camions'
@@ -48,7 +48,7 @@ get,get,post,put,delete
 '/api/camions/{id}'
  ```
 
- ##delivery
+ ## delivery
  get,get,post,put,delete
  ``` 
 '/api/livraisons'
@@ -58,7 +58,7 @@ get,get,post,put,delete
 '/api/livraisons/{id}'
  ```
 
- ##authentification
+ ## authentification
  ```
 '/api/auth/login'
 ```
